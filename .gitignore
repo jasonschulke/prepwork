@@ -1,5 +1,4 @@
 node_modules/
-dist/
 
 # Credentials (never commit)
 .tailwindplus-downloader-credentials.json
