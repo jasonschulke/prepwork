@@ -39,13 +39,13 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-8">
-          <a href="https://linkedin.com/in/jasonschulke" target="_blank" class="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
+          <a href="https://www.linkedin.com/company/prep-work" target="_blank" class="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
             <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             LinkedIn
           </a>
-          <a href="https://prepwork.substack.com" target="_blank" class="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
+          <a href="https://producteducation.substack.com/" target="_blank" class="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
             <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
             </svg>
@@ -74,8 +74,8 @@
               <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                   <div class="space-y-2 py-6">
-                    <a href="https://linkedin.com/in/jasonschulke" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">LinkedIn</a>
-                    <a href="https://prepwork.substack.com" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Substack</a>
+                    <a href="https://www.linkedin.com/company/prep-work" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">LinkedIn</a>
+                    <a href="https://producteducation.substack.com/" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Substack</a>
                   </div>
                   <div class="py-6">
                     <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white bg-red-500 hover:bg-red-400 text-center">Let's Connect</a>
@@ -88,11 +88,21 @@
       </el-dialog>
     </header>
 
-    <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="relative isolate px-6 pt-14 lg:px-8 overflow-hidden">
+      <!-- Decorative background gradient -->
+      <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+        <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-red-200 to-orange-100 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
+      </div>
+
       <div class="mx-auto max-w-4xl py-24 sm:py-32 lg:py-40">
         <div class="text-center">
-          <h1 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Building scalable systems, happy customers</h1>
-          <p class="mt-6 text-lg/8 text-gray-600">A boutique consultancy based in Austin, TX</p>
+          <p class="text-sm font-semibold text-red-500 uppercase tracking-wide">Boutique Consultancy</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Building scalable systems, happy customers</h1>
+          <p class="mt-6 text-xl/8 text-gray-600">Based in Austin, TX — helping teams design better customer experiences and streamline operations.</p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#contact" class="rounded-md bg-red-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Get Started</a>
+            <a href="#clients" class="text-sm font-semibold text-gray-900">See our work <span aria-hidden="true">→</span></a>
+          </div>
         </div>
 
         <!-- Services Grid -->
@@ -115,29 +125,39 @@
           </div>
         </div>
       </div>
+
+      <!-- Bottom decorative gradient -->
+      <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+        <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-orange-100 to-red-100 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
+      </div>
     </div>
   </div>
 
   <!-- Logo Cloud -->
-  <div class="bg-gray-50 py-24 sm:py-32">
+  <div id="clients" class="bg-gray-50 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <h2 class="text-center text-2xl font-semibold text-gray-900">You're In Good Company</h2>
       <p class="mt-2 text-center text-base text-gray-600">A Few Organizations We've Helped</p>
-      <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-        <div class="col-span-2 flex items-center justify-center lg:col-span-1">
-          <img src="assets/aarp.png" alt="AARP" class="max-h-12 w-full object-contain" />
+      <div class="mx-auto mt-14 grid max-w-lg grid-cols-2 items-start gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <img src="assets/aarp.png" alt="AARP" class="h-12 w-auto object-contain" />
+          <span class="text-sm font-medium text-gray-600">AARP</span>
         </div>
-        <div class="col-span-2 flex items-center justify-center lg:col-span-1">
-          <img src="assets/levis.png" alt="Levi's" class="max-h-12 w-full object-contain" />
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <img src="assets/levis.png" alt="Levi's" class="h-12 w-auto object-contain" />
+          <span class="text-sm font-medium text-gray-600">Levi's</span>
         </div>
-        <div class="col-span-2 flex items-center justify-center lg:col-span-1">
-          <img src="assets/commonroom.png" alt="Common Room" class="max-h-12 w-full object-contain" />
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <img src="assets/commonroom.png" alt="Common Room" class="h-12 w-auto object-contain" />
+          <span class="text-sm font-medium text-gray-600">Common Room</span>
         </div>
-        <div class="col-span-2 flex items-center justify-center sm:col-start-2 lg:col-span-1">
-          <img src="assets/stone.png" alt="Stone" class="max-h-12 w-full object-contain" />
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <span class="h-12 flex items-center text-2xl font-bold text-gray-400">Kodif</span>
+          <span class="text-sm font-medium text-gray-600">Kodif</span>
         </div>
-        <div class="col-span-2 col-start-2 flex items-center justify-center sm:col-start-auto lg:col-span-1">
-          <img src="assets/habitat.png" alt="Habitat for Humanity" class="max-h-12 w-full object-contain" />
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <span class="h-12 flex items-center text-lg font-bold text-gray-400 text-center">Center Stage Floors</span>
+          <span class="text-sm font-medium text-gray-600">Center Stage Floors</span>
         </div>
       </div>
     </div>
@@ -274,24 +294,30 @@
       <h2 class="text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-4xl">Get in Touch</h2>
       <p class="mt-2 text-lg/8 text-gray-600">Ready to build something great? Let's talk.</p>
     </div>
-    <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form action="https://formsubmit.co/jasonschulke@gmail.com" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New contact from Prep Work website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+
       <div class="grid grid-cols-1 gap-x-8 gap-y-6">
         <div>
           <label for="name" class="block text-sm/6 font-semibold text-gray-900">Name</label>
           <div class="mt-2.5">
-            <input id="name" type="text" name="name" autocomplete="name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500" />
+            <input id="name" type="text" name="name" autocomplete="name" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500" />
           </div>
         </div>
         <div>
           <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
           <div class="mt-2.5">
-            <input id="email" type="email" name="email" autocomplete="email" placeholder="name@example.com" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500" />
+            <input id="email" type="email" name="email" autocomplete="email" placeholder="name@example.com" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500" />
           </div>
         </div>
         <div>
           <label for="message" class="block text-sm/6 font-semibold text-gray-900">How can we help?</label>
           <div class="mt-2.5">
-            <textarea id="message" name="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500"></textarea>
+            <textarea id="message" name="message" rows="4" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-red-500"></textarea>
           </div>
         </div>
       </div>
@@ -305,13 +331,13 @@
   <footer class="bg-gray-900">
     <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
       <div class="flex justify-center gap-x-6 md:order-2">
-        <a href="https://linkedin.com/in/jasonschulke" target="_blank" class="text-gray-400 hover:text-gray-300">
+        <a href="https://www.linkedin.com/company/prep-work" target="_blank" class="text-gray-400 hover:text-gray-300">
           <span class="sr-only">LinkedIn</span>
           <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
         </a>
-        <a href="https://prepwork.substack.com" target="_blank" class="text-gray-400 hover:text-gray-300">
+        <a href="https://producteducation.substack.com/" target="_blank" class="text-gray-400 hover:text-gray-300">
           <span class="sr-only">Substack</span>
           <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
