@@ -2909,11 +2909,6 @@
       display: inline-block;
     }
   }
-  .sm\:table-cell {
-    @media (width >= 40rem) {
-      display: table-cell;
-    }
-  }
   .sm\:aspect-\[2\/1\] {
     @media (width >= 40rem) {
       aspect-ratio: 2/1;
@@ -3608,11 +3603,6 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
-    }
-  }
-  .lg\:table-cell {
-    @media (width >= 64rem) {
-      display: table-cell;
     }
   }
   .lg\:aspect-auto {
