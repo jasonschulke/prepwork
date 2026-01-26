@@ -4,3 +4,33 @@
   --font-sans: InterVariable, sans-serif;
   --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
+
+/* Slide-over drawer animations */
+dialog[id^="case-study-"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-out, overlay 0.3s ease-out allow-discrete, display 0.3s ease-out allow-discrete;
+}
+
+dialog[id^="case-study-"][open] {
+  opacity: 1;
+}
+
+dialog[id^="case-study-"] el-dialog-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+dialog[id^="case-study-"][open] el-dialog-panel {
+  transform: translateX(0);
+}
+
+/* Starting style for dialog open animation */
+@starting-style {
+  dialog[id^="case-study-"][open] {
+    opacity: 0;
+  }
+
+  dialog[id^="case-study-"][open] el-dialog-panel {
+    transform: translateX(100%);
+  }
+}

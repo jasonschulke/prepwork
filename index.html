@@ -38,7 +38,7 @@
             </svg>
           </button>
         </div>
-        <div class="hidden lg:flex lg:gap-x-8">
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-6">
           <a href="https://www.linkedin.com/company/prep-work" target="_blank" class="text-sm/6 font-semibold text-gray-900 flex items-center gap-x-1">
             <svg class="size-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -51,8 +51,6 @@
             </svg>
             Substack
           </a>
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#contact" class="rounded-md bg-red-500 px-3.5 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Let's Connect</a>
         </div>
       </nav>
@@ -99,28 +97,67 @@
           <h1 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Building scalable systems, happy customers</h1>
           <p class="mt-6 text-lg/8 text-gray-600">A boutique consultancy based in Austin, TX</p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#contact" class="rounded-md bg-red-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Get Started</a>
-            <a href="#clients" class="text-sm font-semibold text-gray-900">See our work <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="rounded-md bg-red-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Get in Touch</a>
+            <a href="#work" class="text-sm font-semibold text-gray-900">See our work <span aria-hidden="true">→</span></a>
           </div>
         </div>
 
         <!-- Services Grid -->
-        <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-2xl border border-gray-200 p-6 hover:border-red-300 hover:shadow-sm transition-all">
-            <h3 class="text-base font-semibold text-red-500">Fractional Leadership</h3>
-            <p class="mt-2 text-sm text-gray-600">Strategic guidance and hands-on leadership for growing teams.</p>
+        <div class="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">Fractional Leadership</h3>
+              <p class="mt-1 text-sm text-gray-600">Strategic guidance and hands-on leadership for growing teams.</p>
+            </div>
           </div>
-          <div class="rounded-2xl border border-gray-200 p-6 hover:border-red-300 hover:shadow-sm transition-all">
-            <h3 class="text-base font-semibold text-red-500">CX Strategy</h3>
-            <p class="mt-2 text-sm text-gray-600">Design smart, human-first customer experience and product education strategies that boost satisfaction and reduce load.</p>
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">CX Strategy</h3>
+              <p class="mt-1 text-sm text-gray-600">Design smart, human-first customer experience and product education strategies.</p>
+            </div>
           </div>
-          <div class="rounded-2xl border border-gray-200 p-6 hover:border-red-300 hover:shadow-sm transition-all">
-            <h3 class="text-base font-semibold text-red-500">Business Automation</h3>
-            <p class="mt-2 text-sm text-gray-600">Streamline workflows and systems so your team moves faster with less effort.</p>
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">Business Automation</h3>
+              <p class="mt-1 text-sm text-gray-600">Streamline workflows and systems so your team moves faster with less effort.</p>
+            </div>
           </div>
-          <div class="rounded-2xl border border-gray-200 p-6 hover:border-red-300 hover:shadow-sm transition-all">
-            <h3 class="text-base font-semibold text-red-500">Operations and Systems</h3>
-            <p class="mt-2 text-sm text-gray-600">Build the operational foundation that scales with your business.</p>
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">Operations and Systems</h3>
+              <p class="mt-1 text-sm text-gray-600">Build the operational foundation that scales with your business.</p>
+            </div>
+          </div>
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">App Development</h3>
+              <p class="mt-1 text-sm text-gray-600">Custom web apps and bespoke internal tools tailored to your unique needs.</p>
+            </div>
+          </div>
+          <div class="flex gap-x-4">
+            <svg class="size-6 flex-none text-red-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">AI & Integrations</h3>
+              <p class="mt-1 text-sm text-gray-600">Connect your tools and leverage AI to work smarter, not harder.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -137,39 +174,351 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <h2 class="text-center text-2xl font-semibold text-gray-900">You're In Good Company</h2>
       <p class="mt-2 text-center text-base text-gray-600">A Few Organizations We've Helped</p>
-      <div class="mx-auto mt-14 grid max-w-lg grid-cols-2 items-start gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+      <div class="mx-auto mt-14 grid max-w-lg grid-cols-2 items-start gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-6">
         <div class="flex flex-col items-center justify-center gap-y-3">
-          <img src="assets/aarp.png" alt="AARP" class="h-12 w-auto object-contain" />
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/aarp.png" alt="AARP" class="max-h-10 max-w-28 object-contain" />
+          </div>
           <span class="text-sm font-medium text-gray-600">AARP</span>
         </div>
         <div class="flex flex-col items-center justify-center gap-y-3">
-          <img src="assets/levis.png" alt="Levi's" class="h-12 w-auto object-contain" />
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/levis.png" alt="Levi's" class="max-h-10 max-w-28 object-contain" />
+          </div>
           <span class="text-sm font-medium text-gray-600">Levi's</span>
         </div>
         <div class="flex flex-col items-center justify-center gap-y-3">
-          <img src="assets/logo_kodif" alt="Kodif" class="h-12 w-auto object-contain" />
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/logo_kodif" alt="Kodif" class="max-h-10 max-w-28 object-contain" />
+          </div>
           <span class="text-sm font-medium text-gray-600">Kodif</span>
         </div>
         <div class="flex flex-col items-center justify-center gap-y-3">
-          <img src="assets/logo_csf" alt="Center Stage Floors" class="h-12 w-auto object-contain" />
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/logo_csf" alt="Center Stage Floors" class="max-h-10 max-w-28 object-contain" />
+          </div>
           <span class="text-sm font-medium text-gray-600">Center Stage Floors</span>
         </div>
         <div class="flex flex-col items-center justify-center gap-y-3">
-          <img src="assets/logo_return_window.png" alt="Return Window" class="h-12 w-auto object-contain" />
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/logo_return_window.png" alt="Return Window" class="max-h-10 max-w-28 object-contain" />
+          </div>
           <span class="text-sm font-medium text-gray-600">Return Window</span>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-y-3">
+          <div class="flex h-10 w-28 items-center justify-center">
+            <img src="assets/blueprint.png" alt="Blueprint" class="max-h-10 max-w-28 object-contain" />
+          </div>
+          <span class="text-sm font-medium text-gray-600">Blueprint</span>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Case Studies Section -->
+  <div id="work" class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Featured Work</h2>
+        <p class="mt-2 text-base text-gray-600">A look at some recent projects and the impact we've made.</p>
+      </div>
+
+      <!-- Featured Case Study -->
+      <button type="button" command="show-modal" commandfor="case-study-kodif" class="mt-16 grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2 text-left group cursor-pointer rounded-2xl p-4 -m-4 transition-all duration-300 hover:bg-gray-50 hover:shadow-md">
+        <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:shrink-0">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60" alt="Featured case study" class="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-x-3">
+            <img src="assets/logo_kodif" alt="Kodif" class="h-6 w-auto" />
+            <span class="text-sm font-semibold text-red-500">Featured Project</span>
+          </div>
+          <h3 class="mt-2 text-2xl font-semibold tracking-tight text-gray-900">Learning Management & Certification for Kodif</h3>
+          <div class="mt-4 space-y-4 text-sm text-gray-600">
+            <p><strong class="text-gray-900">Challenge:</strong> Kodif needed to educate customers on their AI-powered customer service platform while also improving the content used to train their agentic support agents.</p>
+            <p><strong class="text-gray-900">Solution:</strong> Built a learning management system with a product certification course, structured documentation, and training content that doubled as source material for AI agent training.</p>
+            <p><strong class="text-gray-900">Impact:</strong> Improved AI agent training content quality, reduced customer onboarding time, and increased product knowledge through certification programs.</p>
+          </div>
+          <div class="mt-6">
+            <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read the full story <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </div>
+      </button>
+
+      <!-- Additional Case Studies Grid -->
+      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <button type="button" command="show-modal" commandfor="case-study-csf" class="relative flex flex-col rounded-2xl bg-gray-50 p-6 text-left group cursor-pointer transition-all duration-300 hover:bg-gray-100 hover:shadow-md">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60" alt="Case study" class="size-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </div>
+          <div class="mt-4 flex-1">
+            <div class="flex items-center gap-x-2">
+              <img src="assets/logo_csf" alt="Center Stage Floors" class="h-5 w-auto" />
+              <span class="text-xs font-semibold text-red-500">App Development</span>
+            </div>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Custom Web App for Center Stage Floors</h3>
+            <p class="mt-2 text-sm text-gray-600">Developed a custom web app for a modular flooring manufacturer, integrating design, quoting, and production data.</p>
+          </div>
+          <div class="mt-4">
+            <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </button>
+
+        <button type="button" command="show-modal" commandfor="case-study-blueprint" class="relative flex flex-col rounded-2xl bg-gray-50 p-6 text-left group cursor-pointer transition-all duration-300 hover:bg-gray-100 hover:shadow-md">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&auto=format&fit=crop&q=60" alt="Case study" class="size-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </div>
+          <div class="mt-4 flex-1">
+            <div class="flex items-center gap-x-2">
+              <img src="assets/blueprint.png" alt="Blueprint" class="h-5 w-auto" />
+              <span class="text-xs font-semibold text-red-500">App Development</span>
+            </div>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Custom Web App for Blueprint</h3>
+            <p class="mt-2 text-sm text-gray-600">Developed a custom web app for a modular flooring manufacturer, integrating design, quoting, and production data.</p>
+          </div>
+          <div class="mt-4">
+            <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </button>
+
+        <button type="button" command="show-modal" commandfor="case-study-returnwindow" class="relative flex flex-col rounded-2xl bg-gray-50 p-6 text-left group cursor-pointer transition-all duration-300 hover:bg-gray-100 hover:shadow-md">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60" alt="Case study" class="size-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          </div>
+          <div class="mt-4 flex-1">
+            <div class="flex items-center gap-x-2">
+              <img src="assets/logo_return_window.png" alt="Return Window" class="h-5 w-auto" />
+              <span class="text-xs font-semibold text-red-500">App Development</span>
+            </div>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Intelligent Returns Tool for Return Window</h3>
+            <p class="mt-2 text-sm text-gray-600">Built a tool for intelligently monitoring purchases and tracking returns across e-commerce platforms.</p>
+          </div>
+          <div class="mt-4">
+            <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study Slide-over Drawers -->
+  <!-- Kodif Case Study -->
+  <el-dialog>
+    <dialog id="case-study-kodif" class="backdrop:bg-gray-900/80">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+              <img src="assets/logo_kodif" alt="Kodif" class="h-6 w-auto" />
+              <span class="text-sm font-semibold text-red-500">Featured Project</span>
+            </div>
+            <button type="button" command="close" commandfor="case-study-kodif" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60" alt="Kodif case study" class="w-full rounded-xl object-cover aspect-video" />
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Learning Management & Certification for Kodif</h2>
+            <div class="mt-6 space-y-6 text-sm text-gray-600">
+              <div>
+                <h3 class="font-semibold text-gray-900">The Challenge</h3>
+                <p class="mt-2">Kodif, an AI-powered customer service platform, needed to solve two problems: educating customers on how to get the most from their platform, and improving the quality of content used to train their agentic AI support agents.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Solution</h3>
+                <p class="mt-2">We built a learning management system and product certification course that served dual purposes:</p>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Learning Management System (LMS) with structured courses</li>
+                  <li>Product certification program to validate customer expertise</li>
+                  <li>Comprehensive product documentation</li>
+                  <li>Training content designed to also serve as source material for AI agent training</li>
+                  <li>Interactive product guides with embedded videos</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Impact</h3>
+                <ul class="mt-2 space-y-2">
+                  <li><strong>Improved AI agent training</strong> with higher-quality source content</li>
+                  <li><strong>Reduced customer onboarding time</strong> through structured learning paths</li>
+                  <li><strong>Increased product knowledge</strong> via certification programs</li>
+                  <li><strong>Scalable education infrastructure</strong> that grows with the customer base</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+
+  <!-- Center Stage Floors Case Study -->
+  <el-dialog>
+    <dialog id="case-study-csf" class="backdrop:bg-gray-900/80">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+              <img src="assets/logo_csf" alt="Center Stage Floors" class="h-5 w-auto" />
+              <span class="text-sm font-semibold text-red-500">App Development</span>
+            </div>
+            <button type="button" command="close" commandfor="case-study-csf" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60" alt="Center Stage Floors case study" class="w-full rounded-xl object-cover aspect-video" />
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Custom Web App for Center Stage Floors</h2>
+            <div class="mt-6 space-y-6 text-sm text-gray-600">
+              <div>
+                <h3 class="font-semibold text-gray-900">The Challenge</h3>
+                <p class="mt-2">Center Stage Floors, a modular flooring manufacturer, was struggling with disconnected systems. Design specifications, quoting, and production data lived in separate tools, leading to manual re-entry, errors, and delays throughout the order lifecycle.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Solution</h3>
+                <p class="mt-2">We developed a custom web application that integrated design, quoting, and production data into a unified workflow:</p>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Integrated design specification capture</li>
+                  <li>Automated quote generation from design inputs</li>
+                  <li>Seamless handoff to production with all data intact</li>
+                  <li>Real-time order tracking and status updates</li>
+                  <li>Centralized dashboard for operations visibility</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Impact</h3>
+                <ul class="mt-2 space-y-2">
+                  <li><strong>Automated workflows</strong> across design, quoting, and production</li>
+                  <li><strong>Reduced manual input</strong> and data re-entry errors</li>
+                  <li><strong>Improved order accuracy</strong> throughout the lifecycle</li>
+                  <li><strong>Single source of truth</strong> for the entire operation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+
+  <!-- Blueprint Case Study -->
+  <el-dialog>
+    <dialog id="case-study-blueprint" class="backdrop:bg-gray-900/80">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+              <img src="assets/blueprint.png" alt="Blueprint" class="h-5 w-auto" />
+              <span class="text-sm font-semibold text-red-500">App Development</span>
+            </div>
+            <button type="button" command="close" commandfor="case-study-blueprint" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebb6122?w=600&auto=format&fit=crop&q=60" alt="Blueprint case study" class="w-full rounded-xl object-cover aspect-video" />
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Custom Web App for Blueprint</h2>
+            <div class="mt-6 space-y-6 text-sm text-gray-600">
+              <div>
+                <h3 class="font-semibold text-gray-900">The Challenge</h3>
+                <p class="mt-2">Blueprint, a modular flooring manufacturer, was managing design specifications, quotes, and production data across disconnected systems. This led to manual data re-entry, errors, and delays throughout their order lifecycle.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Solution</h3>
+                <p class="mt-2">We developed a custom web application that integrated their entire workflow:</p>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Unified design specification capture</li>
+                  <li>Automated quote generation from design inputs</li>
+                  <li>Direct handoff to production with all data intact</li>
+                  <li>Real-time order tracking and status visibility</li>
+                  <li>Centralized operations dashboard</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Impact</h3>
+                <ul class="mt-2 space-y-2">
+                  <li><strong>Automated workflows</strong> from design through production</li>
+                  <li><strong>Reduced manual input</strong> and eliminated re-entry errors</li>
+                  <li><strong>Improved order accuracy</strong> across the board</li>
+                  <li><strong>Single source of truth</strong> for the entire operation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+
+  <!-- Return Window Case Study -->
+  <el-dialog>
+    <dialog id="case-study-returnwindow" class="backdrop:bg-gray-900/80">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+              <img src="assets/logo_return_window.png" alt="Return Window" class="h-5 w-auto" />
+              <span class="text-sm font-semibold text-red-500">App Development</span>
+            </div>
+            <button type="button" command="close" commandfor="case-study-returnwindow" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60" alt="Return Window case study" class="w-full rounded-xl object-cover aspect-video" />
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Intelligent Returns Tool for Return Window</h2>
+            <div class="mt-6 space-y-6 text-sm text-gray-600">
+              <div>
+                <h3 class="font-semibold text-gray-900">The Challenge</h3>
+                <p class="mt-2">Return Window needed a smarter way to help e-commerce customers manage returns. Tracking purchases across multiple platforms and identifying return windows was tedious and error-prone for consumers.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Solution</h3>
+                <p class="mt-2">We built an intelligent tool that monitors purchases and tracks returns across e-commerce platforms:</p>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Automated purchase monitoring across platforms</li>
+                  <li>Intelligent return window tracking and alerts</li>
+                  <li>Centralized view of all purchases and return eligibility</li>
+                  <li>Automated notifications before return windows close</li>
+                  <li>Streamlined return initiation process</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Impact</h3>
+                <ul class="mt-2 space-y-2">
+                  <li><strong>Simplified purchase tracking</strong> across multiple retailers</li>
+                  <li><strong>Never miss a return window</strong> with smart alerts</li>
+                  <li><strong>Centralized visibility</strong> into all return opportunities</li>
+                  <li><strong>Streamlined returns</strong> with guided workflows</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+
   <!-- Platforms Section -->
-  <div class="bg-white py-24 sm:py-32">
+  <div class="bg-gray-50 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Platforms we typically work with</h2>
         <p class="mt-2 text-base text-gray-600">We build on virtually any platform, but these are some of the most common ones we're familiar with.</p>
       </div>
-      <div class="mt-10 overflow-hidden rounded-xl border border-gray-200">
+      <div class="mt-10 overflow-x-auto rounded-xl border border-gray-200">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
