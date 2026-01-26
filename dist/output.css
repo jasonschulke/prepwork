@@ -389,6 +389,9 @@
   .-m-2\.5 {
     margin: calc(var(--spacing) * -2.5);
   }
+  .-m-4 {
+    margin: calc(var(--spacing) * -4);
+  }
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
@@ -1617,6 +1620,9 @@
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
