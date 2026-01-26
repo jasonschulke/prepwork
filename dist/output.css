@@ -1113,6 +1113,9 @@
   .overflow-visible {
     overflow: visible;
   }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -3723,6 +3726,11 @@
   .lg\:gap-8 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:gap-x-6 {
+    @media (width >= 64rem) {
+      column-gap: calc(var(--spacing) * 6);
     }
   }
   .lg\:gap-x-8 {
