@@ -9,7 +9,6 @@
     --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-100: oklch(93.6% 0.032 17.717);
     --color-red-200: oklch(88.5% 0.062 18.334);
-    --color-red-300: oklch(80.8% 0.114 19.571);
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
@@ -553,6 +552,9 @@
   }
   .aspect-\[6\/5\] {
     aspect-ratio: 6/5;
+  }
+  .aspect-\[16\/9\] {
+    aspect-ratio: 16/9;
   }
   .aspect-\[801\/1036\] {
     aspect-ratio: 801/1036;
@@ -2821,6 +2823,11 @@
       display: table-cell;
     }
   }
+  .sm\:aspect-\[2\/1\] {
+    @media (width >= 40rem) {
+      aspect-ratio: 2/1;
+    }
+  }
   .sm\:size-4 {
     @media (width >= 40rem) {
       width: calc(var(--spacing) * 4);
@@ -3515,6 +3522,11 @@
   .lg\:aspect-auto {
     @media (width >= 64rem) {
       aspect-ratio: auto;
+    }
+  }
+  .lg\:aspect-square {
+    @media (width >= 64rem) {
+      aspect-ratio: 1 / 1;
     }
   }
   .lg\:size-full {
