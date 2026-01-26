@@ -293,10 +293,7 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-              <img src="assets/logo_kodif" alt="Kodif" class="h-6 w-auto" />
-              <span class="text-sm font-semibold text-red-500">Featured Project</span>
-            </div>
+            <span class="text-sm font-semibold text-red-500">Featured Project</span>
             <button type="button" command="close" commandfor="case-study-kodif" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -345,10 +342,7 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-              <img src="assets/logo_csf" alt="Center Stage Floors" class="h-5 w-auto" />
-              <span class="text-sm font-semibold text-red-500">App Development</span>
-            </div>
+            <span class="text-sm font-semibold text-red-500">App Development</span>
             <button type="button" command="close" commandfor="case-study-csf" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -397,10 +391,7 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-              <img src="assets/blueprint.png" alt="Blueprint" class="h-5 w-auto" />
-              <span class="text-sm font-semibold text-red-500">App Development</span>
-            </div>
+            <span class="text-sm font-semibold text-red-500">App Development</span>
             <button type="button" command="close" commandfor="case-study-blueprint" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -449,10 +440,7 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-              <img src="assets/logo_return_window.png" alt="Return Window" class="h-5 w-auto" />
-              <span class="text-sm font-semibold text-red-500">App Development</span>
-            </div>
+            <span class="text-sm font-semibold text-red-500">App Development</span>
             <button type="button" command="close" commandfor="case-study-returnwindow" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -515,125 +503,251 @@
         <button type="button" data-filter="analytics" class="filter-btn inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20 hover:bg-pink-100">Analytics</button>
       </div>
 
-      <div class="mt-6 overflow-x-auto rounded-xl border border-gray-200">
+      <div class="mt-6 -mx-4 sm:mx-0 sm:rounded-xl sm:border sm:border-gray-200">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
-              <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Description</th>
+              <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Description</th>
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Tags</th>
             </tr>
           </thead>
           <tbody id="platforms-table" class="divide-y divide-gray-200 bg-white">
             <tr data-tags="no-code">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Airtable</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Flexible database + spreadsheet for organizing anything</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Airtable
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Flexible database + spreadsheet for organizing anything</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Flexible database + spreadsheet for organizing anything</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">No Code</span></td>
             </tr>
             <tr data-tags="no-code automations">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Make</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Visual automation builder for complex workflows</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Make
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Visual automation builder for complex workflows</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Visual automation builder for complex workflows</td>
               <td class="px-3 py-4 text-sm">
                 <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">No Code</span>
                 <span class="ml-1 inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span>
               </td>
             </tr>
             <tr data-tags="no-code automations">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Zapier</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Simple no-code automations connecting everyday apps</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Zapier
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Simple no-code automations connecting everyday apps</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Simple no-code automations connecting everyday apps</td>
               <td class="px-3 py-4 text-sm">
                 <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">No Code</span>
                 <span class="ml-1 inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span>
               </td>
             </tr>
             <tr data-tags="automations">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Val Town</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Write and deploy serverless functions instantly</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Val Town
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Write and deploy serverless functions instantly</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Write and deploy serverless functions instantly</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Softr</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Build client portals and apps on top of Airtable</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Softr
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Build client portals and apps on top of Airtable</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Build client portals and apps on top of Airtable</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Webflow</td>
-              <td class="px-3 py-4 text-sm text-gray-500">No-code website builder with full design control</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Webflow
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">No-code website builder with full design control</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">No-code website builder with full design control</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Retool</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Build internal tools quickly using data sources</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Retool
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Build internal tools quickly using data sources</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Build internal tools quickly using data sources</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Supabase</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Open source Firebase alternative with Postgres database</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Supabase
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Open source Firebase alternative with Postgres database</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Open source Firebase alternative with Postgres database</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">React</td>
-              <td class="px-3 py-4 text-sm text-gray-500">JavaScript library for building user interfaces</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                React
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">JavaScript library for building user interfaces</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">JavaScript library for building user interfaces</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Netlify</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Platform for deploying and hosting web applications</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Netlify
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Platform for deploying and hosting web applications</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Platform for deploying and hosting web applications</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="app-development">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">GitHub</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Code hosting and collaboration platform</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                GitHub
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Code hosting and collaboration platform</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Code hosting and collaboration platform</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
             <tr data-tags="documentation">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Zendesk</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Scalable support platform for tickets and help centers</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Zendesk
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Scalable support platform for tickets and help centers</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Scalable support platform for tickets and help centers</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
             <tr data-tags="documentation">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Intercom</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Customer messaging, support, and automation in one</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Intercom
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Customer messaging, support, and automation in one</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Customer messaging, support, and automation in one</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
             <tr data-tags="documentation">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Help Scout</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Email-first helpdesk with a personal support feel</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Help Scout
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Email-first helpdesk with a personal support feel</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Email-first helpdesk with a personal support feel</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
             <tr data-tags="lms">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Workramp</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Enterprise LMS for training customers and employees</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Workramp
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Enterprise LMS for training customers and employees</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Enterprise LMS for training customers and employees</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
             </tr>
             <tr data-tags="lms">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Thinkific</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Platform for hosting and selling online courses</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Thinkific
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Platform for hosting and selling online courses</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Platform for hosting and selling online courses</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
             </tr>
             <tr data-tags="lms">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lessonly</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Team training and enablement for support and sales</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Lessonly
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Team training and enablement for support and sales</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Team training and enablement for support and sales</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
             </tr>
             <tr data-tags="ai">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Claude (Anthropic)</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Advanced AI assistant for complex reasoning and coding</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Claude (Anthropic)
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Advanced AI assistant for complex reasoning and coding</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Advanced AI assistant for complex reasoning and coding</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">AI</span></td>
             </tr>
             <tr data-tags="ai">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">ChatGPT (OpenAI)</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Conversational AI for content and automation</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                ChatGPT (OpenAI)
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Conversational AI for content and automation</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Conversational AI for content and automation</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">AI</span></td>
             </tr>
             <tr data-tags="analytics">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">PostHog</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Open source product analytics and session replay</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                PostHog
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Open source product analytics and session replay</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Open source product analytics and session replay</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20">Analytics</span></td>
             </tr>
             <tr data-tags="analytics">
-              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Google Analytics</td>
-              <td class="px-3 py-4 text-sm text-gray-500">Web analytics for tracking traffic and user behavior</td>
+              <td class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
+                Google Analytics
+                <dl class="font-normal sm:hidden">
+                  <dt class="sr-only">Description</dt>
+                  <dd class="mt-1 truncate text-gray-500">Web analytics for tracking traffic and user behavior</dd>
+                </dl>
+              </td>
+              <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">Web analytics for tracking traffic and user behavior</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20">Analytics</span></td>
             </tr>
           </tbody>
