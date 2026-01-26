@@ -230,12 +230,15 @@
           <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
         </div>
         <div class="flex flex-col justify-center">
-          <span class="text-sm font-semibold text-red-500">Featured Project</span>
-          <h3 class="mt-2 text-2xl font-semibold tracking-tight text-gray-900">AI-Powered Customer Support for Kodif</h3>
+          <div class="flex items-center gap-x-3">
+            <img src="assets/logo_kodif" alt="Kodif" class="h-6 w-auto" />
+            <span class="text-sm font-semibold text-red-500">Featured Project</span>
+          </div>
+          <h3 class="mt-2 text-2xl font-semibold tracking-tight text-gray-900">Customer Education Ecosystem for Kodif</h3>
           <div class="mt-4 space-y-4 text-sm text-gray-600">
-            <p><strong class="text-gray-900">Challenge:</strong> Kodif needed comprehensive product documentation and training materials to support their AI customer service platform launch.</p>
-            <p><strong class="text-gray-900">Solution:</strong> Built an end-to-end documentation system including interactive guides, video tutorials, and a searchable knowledge base that stayed current with rapid product updates.</p>
-            <p><strong class="text-gray-900">Impact:</strong> Reduced customer onboarding time by 40% and decreased support ticket volume by 25% within the first quarter.</p>
+            <p><strong class="text-gray-900">Challenge:</strong> Kodif needed a complete customer education ecosystem to support their AI-powered customer service platform and reduce reliance on support teams.</p>
+            <p><strong class="text-gray-900">Solution:</strong> Built a comprehensive education system including an LMS with certification programs, structured documentation, interactive product guides, and in-app contextual help.</p>
+            <p><strong class="text-gray-900">Impact:</strong> Reduced support ticket volume and increased customer retention by enabling self-service learning and faster product adoption.</p>
           </div>
           <div class="mt-6">
             <button type="button" command="show-modal" commandfor="case-study-kodif" class="text-sm font-semibold text-red-500 hover:text-red-400">Read the full story <span aria-hidden="true">&rarr;</span></button>
@@ -250,9 +253,12 @@
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60" alt="Case study" class="size-full object-cover" />
           </div>
           <div class="mt-4 flex-1">
-            <span class="text-xs font-semibold text-red-500">Business Automation</span>
-            <h3 class="mt-2 text-lg font-semibold text-gray-900">Workflow Automation for Center Stage Floors</h3>
-            <p class="mt-2 text-sm text-gray-600">Streamlined quote-to-invoice process using Airtable and Make, reducing manual data entry by 80%.</p>
+            <div class="flex items-center gap-x-2">
+              <img src="assets/logo_csf" alt="Center Stage Floors" class="h-5 w-auto" />
+              <span class="text-xs font-semibold text-red-500">App Development</span>
+            </div>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Custom Web App for Center Stage Floors</h3>
+            <p class="mt-2 text-sm text-gray-600">Built a custom web app integrating design, quoting, and production data to automate workflows and improve order accuracy.</p>
           </div>
           <div class="mt-4">
             <button type="button" command="show-modal" commandfor="case-study-csf" class="text-sm font-semibold text-red-500 hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></button>
@@ -265,8 +271,8 @@
           </div>
           <div class="mt-4 flex-1">
             <span class="text-xs font-semibold text-red-500">CX Strategy</span>
-            <h3 class="mt-2 text-lg font-semibold text-gray-900">Help Center Overhaul for Common Room</h3>
-            <p class="mt-2 text-sm text-gray-600">Revamped documentation and built interactive product guides that kept pace with rapid UI changes.</p>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Education & Enablement for Common Room</h3>
+            <p class="mt-2 text-sm text-gray-600">Developed education strategy that cut onboarding time by 50% and technical integration time by 60%.</p>
           </div>
           <div class="mt-4">
             <button type="button" command="show-modal" commandfor="case-study-commonroom" class="text-sm font-semibold text-red-500 hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></button>
@@ -278,7 +284,10 @@
             <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&auto=format&fit=crop&q=60" alt="Case study" class="size-full object-cover" />
           </div>
           <div class="mt-4 flex-1">
-            <span class="text-xs font-semibold text-red-500">App Development</span>
+            <div class="flex items-center gap-x-2">
+              <img src="assets/logo_return_window.png" alt="Return Window" class="h-5 w-auto" />
+              <span class="text-xs font-semibold text-red-500">App Development</span>
+            </div>
             <h3 class="mt-2 text-lg font-semibold text-gray-900">Custom Client Portal for Return Window</h3>
             <p class="mt-2 text-sm text-gray-600">Built a Retool-based internal dashboard for tracking returns and customer communications.</p>
           </div>
@@ -297,7 +306,10 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <span class="text-sm font-semibold text-red-500">Featured Project</span>
+            <div class="flex items-center gap-x-3">
+              <img src="assets/logo_kodif" alt="Kodif" class="h-6 w-auto" />
+              <span class="text-sm font-semibold text-red-500">Featured Project</span>
+            </div>
             <button type="button" command="close" commandfor="case-study-kodif" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -307,30 +319,31 @@
           </div>
           <div class="mt-6">
             <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60" alt="Kodif case study" class="w-full rounded-xl object-cover aspect-video" />
-            <h2 class="mt-6 text-2xl font-semibold text-gray-900">AI-Powered Customer Support for Kodif</h2>
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Customer Education Ecosystem for Kodif</h2>
             <div class="mt-6 space-y-6 text-sm text-gray-600">
               <div>
                 <h3 class="font-semibold text-gray-900">The Challenge</h3>
-                <p class="mt-2">Kodif, an AI-powered customer service platform, was preparing for a major product launch. They needed comprehensive documentation and training materials that could keep pace with their rapidly evolving product while providing an exceptional onboarding experience for new customers.</p>
+                <p class="mt-2">Kodif, an AI-powered customer service platform, needed a comprehensive customer education ecosystem to support their growing user base. Without proper training and documentation, customers struggled to realize the full value of the platform, leading to increased support burden and churn risk.</p>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Solution</h3>
-                <p class="mt-2">We built an end-to-end documentation system from the ground up, including:</p>
+                <p class="mt-2">We built a complete customer education ecosystem from the ground up:</p>
                 <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Learning Management System (LMS) with structured courses</li>
+                  <li>Certification programs to validate customer expertise</li>
+                  <li>Comprehensive product documentation</li>
                   <li>Interactive product guides with embedded videos</li>
-                  <li>Searchable knowledge base with smart categorization</li>
-                  <li>Step-by-step tutorials for common workflows</li>
-                  <li>Release notes system for product updates</li>
-                  <li>In-app contextual help tooltips</li>
+                  <li>In-app contextual help and tooltips</li>
+                  <li>Release notes system for ongoing product updates</li>
                 </ul>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Impact</h3>
                 <ul class="mt-2 space-y-2">
-                  <li><strong>40% faster</strong> customer onboarding time</li>
-                  <li><strong>25% reduction</strong> in support ticket volume</li>
-                  <li><strong>4.8/5 rating</strong> on documentation helpfulness surveys</li>
-                  <li><strong>60% self-service</strong> resolution rate for common issues</li>
+                  <li><strong>Reduced support volume</strong> by enabling self-service learning</li>
+                  <li><strong>Increased customer retention</strong> through faster time-to-value</li>
+                  <li><strong>Scalable education infrastructure</strong> that grows with the customer base</li>
+                  <li><strong>Higher product adoption</strong> through structured certification paths</li>
                 </ul>
               </div>
             </div>
@@ -346,7 +359,10 @@
       <div tabindex="0" class="fixed inset-0 focus:outline-none">
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
-            <span class="text-sm font-semibold text-red-500">Business Automation</span>
+            <div class="flex items-center gap-x-3">
+              <img src="assets/logo_csf" alt="Center Stage Floors" class="h-5 w-auto" />
+              <span class="text-sm font-semibold text-red-500">App Development</span>
+            </div>
             <button type="button" command="close" commandfor="case-study-csf" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -356,30 +372,30 @@
           </div>
           <div class="mt-6">
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60" alt="Center Stage Floors case study" class="w-full rounded-xl object-cover aspect-video" />
-            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Workflow Automation for Center Stage Floors</h2>
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Custom Web App for Center Stage Floors</h2>
             <div class="mt-6 space-y-6 text-sm text-gray-600">
               <div>
                 <h3 class="font-semibold text-gray-900">The Challenge</h3>
-                <p class="mt-2">Center Stage Floors, a growing flooring company, was drowning in manual data entry. Their quote-to-invoice process involved copying information between multiple systems, leading to errors and wasted hours every week.</p>
+                <p class="mt-2">Center Stage Floors, a modular flooring manufacturer, was struggling with disconnected systems. Design specifications, quoting, and production data lived in separate tools, leading to manual re-entry, errors, and delays throughout the order lifecycle.</p>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Solution</h3>
-                <p class="mt-2">We designed and implemented a fully automated workflow using Airtable as the central hub and Make for automation:</p>
+                <p class="mt-2">We built a custom web application that unified their entire workflow:</p>
                 <ul class="mt-2 list-disc list-inside space-y-1">
-                  <li>Centralized customer and project database</li>
-                  <li>Automated quote generation from templates</li>
-                  <li>One-click conversion from quote to invoice</li>
-                  <li>Automated email notifications at each stage</li>
-                  <li>Real-time reporting dashboard</li>
+                  <li>Integrated design specification capture</li>
+                  <li>Automated quote generation from design inputs</li>
+                  <li>Seamless handoff to production with all data intact</li>
+                  <li>Real-time order tracking and status updates</li>
+                  <li>Centralized dashboard for operations visibility</li>
                 </ul>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Impact</h3>
                 <ul class="mt-2 space-y-2">
-                  <li><strong>80% reduction</strong> in manual data entry</li>
-                  <li><strong>5+ hours saved</strong> per week on admin tasks</li>
-                  <li><strong>Zero data entry errors</strong> since implementation</li>
-                  <li><strong>Same-day invoicing</strong> instead of week-long delays</li>
+                  <li><strong>Eliminated manual input</strong> between design, quoting, and production</li>
+                  <li><strong>Improved order accuracy</strong> by removing data re-entry errors</li>
+                  <li><strong>Automated workflows</strong> reduced processing time significantly</li>
+                  <li><strong>Single source of truth</strong> for the entire order lifecycle</li>
                 </ul>
               </div>
             </div>
@@ -405,30 +421,30 @@
           </div>
           <div class="mt-6">
             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60" alt="Common Room case study" class="w-full rounded-xl object-cover aspect-video" />
-            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Help Center Overhaul for Common Room</h2>
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Education & Enablement for Common Room</h2>
             <div class="mt-6 space-y-6 text-sm text-gray-600">
               <div>
                 <h3 class="font-semibold text-gray-900">The Challenge</h3>
-                <p class="mt-2">Common Room's product was evolving rapidly, with UI changes happening weekly. Their documentation was constantly out of date, frustrating customers and overwhelming the support team with basic questions.</p>
+                <p class="mt-2">Common Room's product was evolving rapidly, with UI changes happening weekly. New customers struggled with onboarding, and technical integrations took too long to implement. Their documentation couldn't keep pace, frustrating customers and overwhelming the support team.</p>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Solution</h3>
-                <p class="mt-2">We completely revamped their documentation strategy and built systems to keep pace with rapid changes:</p>
+                <p class="mt-2">We developed a comprehensive education and enablement strategy:</p>
                 <ul class="mt-2 list-disc list-inside space-y-1">
                   <li>Restructured help center with intuitive navigation</li>
                   <li>Interactive product guides using Storylane</li>
-                  <li>Automated screenshot update workflow</li>
-                  <li>Video library for complex features</li>
-                  <li>Feedback loops to identify documentation gaps</li>
+                  <li>Streamlined onboarding program with clear milestones</li>
+                  <li>Technical integration documentation and guides</li>
+                  <li>Video library for complex features and workflows</li>
                 </ul>
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900">The Impact</h3>
                 <ul class="mt-2 space-y-2">
-                  <li><strong>35% reduction</strong> in "how do I?" support tickets</li>
+                  <li><strong>50% reduction</strong> in customer onboarding time</li>
+                  <li><strong>60% reduction</strong> in technical integration time</li>
                   <li><strong>Documentation always current</strong> within 48 hours of releases</li>
-                  <li><strong>2x increase</strong> in help center engagement</li>
-                  <li><strong>NPS improved</strong> from 42 to 58</li>
+                  <li><strong>Significantly improved</strong> customer satisfaction and NPS</li>
                 </ul>
               </div>
             </div>

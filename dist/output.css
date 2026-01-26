@@ -613,6 +613,9 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -982,6 +985,9 @@
   }
   .gap-x-2\.5 {
     column-gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-x-3 {
+    column-gap: calc(var(--spacing) * 3);
   }
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
@@ -4806,6 +4812,28 @@
         display: none;
       }
     }
+  }
+}
+dialog[id^="case-study-"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-out, overlay 0.3s ease-out allow-discrete, display 0.3s ease-out allow-discrete;
+}
+dialog[id^="case-study-"][open] {
+  opacity: 1;
+}
+dialog[id^="case-study-"] el-dialog-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+dialog[id^="case-study-"][open] el-dialog-panel {
+  transform: translateX(0);
+}
+@starting-style {
+  dialog[id^="case-study-"][open] {
+    opacity: 0;
+  }
+  dialog[id^="case-study-"][open] el-dialog-panel {
+    transform: translateX(100%);
   }
 }
 @property --tw-translate-x {
