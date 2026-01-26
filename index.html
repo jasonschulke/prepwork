@@ -518,7 +518,20 @@
         <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Platforms we typically work with</h2>
         <p class="mt-2 text-base text-gray-600">We build on virtually any platform, but these are some of the most common ones we're familiar with.</p>
       </div>
-      <div class="mt-10 overflow-x-auto rounded-xl border border-gray-200">
+
+      <!-- Filter Buttons -->
+      <div class="mt-8 flex flex-wrap gap-2" id="platform-filters">
+        <button type="button" data-filter="all" class="filter-btn active inline-flex items-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-medium text-white">All</button>
+        <button type="button" data-filter="no-code" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">No Code</button>
+        <button type="button" data-filter="automations" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Automations</button>
+        <button type="button" data-filter="app-development" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">App Development</button>
+        <button type="button" data-filter="documentation" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Documentation</button>
+        <button type="button" data-filter="lms" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">LMS</button>
+        <button type="button" data-filter="ai" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">AI</button>
+        <button type="button" data-filter="analytics" class="filter-btn inline-flex items-center rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Analytics</button>
+      </div>
+
+      <div class="mt-6 overflow-x-auto rounded-xl border border-gray-200">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
@@ -527,13 +540,13 @@
               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Tags</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200 bg-white">
-            <tr>
+          <tbody id="platforms-table" class="divide-y divide-gray-200 bg-white">
+            <tr data-tags="no-code">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Airtable</td>
               <td class="px-3 py-4 text-sm text-gray-500">Flexible database + spreadsheet for organizing anything</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">No Code</span></td>
             </tr>
-            <tr>
+            <tr data-tags="no-code automations">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Make</td>
               <td class="px-3 py-4 text-sm text-gray-500">Visual automation builder for complex workflows</td>
               <td class="px-3 py-4 text-sm">
@@ -541,7 +554,7 @@
                 <span class="ml-1 inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span>
               </td>
             </tr>
-            <tr>
+            <tr data-tags="no-code automations">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Zapier</td>
               <td class="px-3 py-4 text-sm text-gray-500">Simple no-code automations connecting everyday apps</td>
               <td class="px-3 py-4 text-sm">
@@ -549,50 +562,95 @@
                 <span class="ml-1 inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span>
               </td>
             </tr>
-            <tr>
+            <tr data-tags="automations">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Val Town</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Write and deploy serverless functions instantly</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-600/20">Automations</span></td>
+            </tr>
+            <tr data-tags="app-development">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Softr</td>
               <td class="px-3 py-4 text-sm text-gray-500">Build client portals and apps on top of Airtable</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
-            <tr>
+            <tr data-tags="app-development">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Webflow</td>
               <td class="px-3 py-4 text-sm text-gray-500">No-code website builder with full design control</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
-            <tr>
+            <tr data-tags="app-development">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Retool</td>
               <td class="px-3 py-4 text-sm text-gray-500">Build internal tools quickly using data sources</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
             </tr>
-            <tr>
+            <tr data-tags="app-development">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Supabase</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Open source Firebase alternative with Postgres database</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
+            </tr>
+            <tr data-tags="app-development">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">React</td>
+              <td class="px-3 py-4 text-sm text-gray-500">JavaScript library for building user interfaces</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
+            </tr>
+            <tr data-tags="app-development">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Netlify</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Platform for deploying and hosting web applications</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
+            </tr>
+            <tr data-tags="app-development">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">GitHub</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Code hosting and collaboration platform</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20">App Development</span></td>
+            </tr>
+            <tr data-tags="documentation">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Zendesk</td>
               <td class="px-3 py-4 text-sm text-gray-500">Scalable support platform for tickets and help centers</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
-            <tr>
+            <tr data-tags="documentation">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Intercom</td>
               <td class="px-3 py-4 text-sm text-gray-500">Customer messaging, support, and automation in one</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
-            <tr>
+            <tr data-tags="documentation">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Help Scout</td>
               <td class="px-3 py-4 text-sm text-gray-500">Email-first helpdesk with a personal support feel</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-700 ring-1 ring-inset ring-yellow-600/20">Documentation</span></td>
             </tr>
-            <tr>
+            <tr data-tags="lms">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Workramp</td>
               <td class="px-3 py-4 text-sm text-gray-500">Enterprise LMS for training customers and employees</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
             </tr>
-            <tr>
+            <tr data-tags="lms">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Thinkific</td>
               <td class="px-3 py-4 text-sm text-gray-500">Platform for hosting and selling online courses</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
             </tr>
-            <tr>
+            <tr data-tags="lms">
               <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lessonly</td>
               <td class="px-3 py-4 text-sm text-gray-500">Team training and enablement for support and sales</td>
               <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/20">LMS</span></td>
+            </tr>
+            <tr data-tags="ai">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Claude (Anthropic)</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Advanced AI assistant for complex reasoning and coding</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">AI</span></td>
+            </tr>
+            <tr data-tags="ai">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">ChatGPT (OpenAI)</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Conversational AI for content and automation</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-orange-50 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">AI</span></td>
+            </tr>
+            <tr data-tags="analytics">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">PostHog</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Open source product analytics and session replay</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20">Analytics</span></td>
+            </tr>
+            <tr data-tags="analytics">
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Google Analytics</td>
+              <td class="px-3 py-4 text-sm text-gray-500">Web analytics for tracking traffic and user behavior</td>
+              <td class="px-3 py-4 text-sm"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-600/20">Analytics</span></td>
             </tr>
           </tbody>
         </table>
@@ -698,5 +756,36 @@
     </div>
   </footer>
 
+  <!-- Platform Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const tableRows = document.querySelectorAll('#platforms-table tr');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+
+          // Update active button styles
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-gray-900', 'text-white');
+            b.classList.add('bg-white', 'text-gray-700', 'ring-1', 'ring-inset', 'ring-gray-300');
+          });
+          this.classList.remove('bg-white', 'text-gray-700', 'ring-1', 'ring-inset', 'ring-gray-300');
+          this.classList.add('bg-gray-900', 'text-white');
+
+          // Filter rows
+          tableRows.forEach(row => {
+            if (filter === 'all') {
+              row.style.display = '';
+            } else {
+              const tags = row.dataset.tags || '';
+              row.style.display = tags.includes(filter) ? '' : 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
