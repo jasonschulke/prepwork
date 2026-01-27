@@ -497,6 +497,9 @@
   .-ml-88 {
     margin-left: calc(var(--spacing) * -88);
   }
+  .ml-1 {
+    margin-left: calc(var(--spacing) * 1);
+  }
   .ml-10 {
     margin-left: calc(var(--spacing) * 10);
   }
