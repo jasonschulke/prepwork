@@ -1,0 +1,7 @@
+# Robots.txt for prepwork.co
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://prepwork.co/sitemap.xml
