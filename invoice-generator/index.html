@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator - Prep Work</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../assets/Favicon.png">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="../dist/output.css">
+  <style>
+    .print-only { display: none; }
+
+    @media print {
+      html, body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+
+      .invoice-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        min-height: auto !important;
+        position: relative;
+        page-break-inside: avoid;
+      }
+
+      .invoice-page {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+      }
+
+      .page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+
+      /* Keep detail table rows together */
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+
+      /* Force background colors on header bar and alternating rows */
+      .invoice-header-bar {
+        background-color: #f9fafb !important;
+        border-top: 3px solid #ef4444 !important;
+      }
+      tr[style*="background: #fafafa"] {
+        background-color: #fafafa !important;
+      }
+
+      /* Invoice ref footer at bottom of each page */
+      .invoice-footer {
+        margin-top: auto !important;
+      }
+
+      /* Prevent widows/orphans in text blocks */
+      p { widows: 3; orphans: 3; }
+
+      @page {
+        margin: 0.75in;
+        size: letter;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 antialiased">
+
+  <!-- Editor Panel -->
+  <div class="no-print mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mb-8 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900">Invoice Generator</h1>
+        <p class="mt-1 text-sm text-gray-500">Fill in the details below, then print or save as PDF.</p>
+      </div>
+      <div class="flex gap-3">
+        <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-lg bg-red-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+          <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m0 0a48.159 48.159 0 0 1 10.5 0m-10.5 0V4.875c0-.621.504-1.125 1.125-1.125h8.25c.621 0 1.125.504 1.125 1.125v3.659" /></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <!-- Form -->
+      <div class="space-y-6">
+
+        <!-- Invoice Info -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Invoice Info</legend>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="invoiceNumber" class="block text-sm font-medium text-gray-700">Invoice #</label>
+              <input type="text" id="invoiceNumber" value="#08" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="issueDate" class="block text-sm font-medium text-gray-700">Issue Date</label>
+              <input type="date" id="issueDate" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="dueDate" class="block text-sm font-medium text-gray-700">Payment Due Date</label>
+              <input type="date" id="dueDate" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="hourlyRate" class="block text-sm font-medium text-gray-700">Default Rate ($/hr)</label>
+              <input type="number" id="hourlyRate" value="120" step="0.01" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Client Info -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Client</legend>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2">
+              <label for="clientCompany" class="block text-sm font-medium text-gray-700">Company</label>
+              <input type="text" id="clientCompany" value="Center Stage Floors" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div class="col-span-2">
+              <label for="clientAttn" class="block text-sm font-medium text-gray-700">ATTN</label>
+              <input type="text" id="clientAttn" value="Craig Beason" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div class="col-span-2">
+              <label for="clientAddress" class="block text-sm font-medium text-gray-700">Address</label>
+              <textarea id="clientAddress" rows="2" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">10863 Rockwall Rd
+Dallas, TX 75238</textarea>
+            </div>
+            <div class="col-span-2">
+              <label for="clientWebsite" class="block text-sm font-medium text-gray-700">Website</label>
+              <input type="text" id="clientWebsite" value="www.centerstagefloors.com" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Payable To -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Payable To</legend>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2">
+              <label for="payeeName" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="payeeName" value="Jason Schulke" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div class="col-span-2">
+              <label for="payeeAddress" class="block text-sm font-medium text-gray-700">Address</label>
+              <textarea id="payeeAddress" rows="2" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">7213 Inspiration Drive
+Austin, TX 78724</textarea>
+            </div>
+            <div>
+              <label for="payeePhone" class="block text-sm font-medium text-gray-700">Phone</label>
+              <input type="text" id="payeePhone" value="830-708-2035" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="payeeWebsite" class="block text-sm font-medium text-gray-700">Website</label>
+              <input type="text" id="payeeWebsite" value="www.jasonschulke.com" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Payment Terms -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Payment Terms &amp; Methods</legend>
+          <div class="space-y-4">
+            <div>
+              <label for="paymentTerms" class="block text-sm font-medium text-gray-700">Payment Terms</label>
+              <textarea id="paymentTerms" rows="3" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">As outlined in the Master Service Agreement dated May 22, 2025 between Center Stage Floors and Jason Schulke, payments are due within 7 days of receipt unless otherwise stated. Late payments are subject to a 10% penalty.</textarea>
+            </div>
+            <div>
+              <label for="paymentMethods" class="block text-sm font-medium text-gray-700">Payment Methods</label>
+              <textarea id="paymentMethods" rows="3" oninput="updatePreview()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">Payment can be made electronically via direct ACH deposit or by a physical check mailed to Jason Schulke at 7213 Inspiration Drive, Austin, TX 78724.</textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Line Items -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Line Items</legend>
+
+          <!-- Airtable paste area -->
+          <div id="pasteArea" class="hidden mb-4">
+            <label class="block text-xs font-medium text-gray-500 mb-1">Paste from Airtable (tab-separated: Date, Summary, Hours, Rate)</label>
+            <textarea id="pasteInput" rows="4" placeholder="Paste rows from Airtable here..." class="block w-full rounded-md border border-dashed border-gray-400 bg-gray-50 px-3 py-2 text-sm font-mono shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none"></textarea>
+            <div class="mt-2 flex gap-2">
+              <button type="button" onclick="importPaste()" class="inline-flex items-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">Import</button>
+              <button type="button" onclick="togglePaste()" class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">Cancel</button>
+            </div>
+          </div>
+
+          <div class="space-y-3" id="lineItemsContainer">
+            <!-- Line items rendered by JS -->
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button type="button" onclick="addLineItem()" class="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+              <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              Add Row
+            </button>
+            <button type="button" onclick="togglePaste()" class="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+              <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z" /></svg>
+              Paste from Airtable
+            </button>
+            <button type="button" onclick="clearLineItems()" class="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+              Clear All
+            </button>
+          </div>
+        </fieldset>
+
+        <!-- Adjustments -->
+        <fieldset class="rounded-xl border border-gray-200 bg-white p-6">
+          <legend class="px-2 text-sm font-semibold text-gray-700">Adjustments</legend>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="discounts" class="block text-sm font-medium text-gray-700">Discounts ($)</label>
+              <input type="number" id="discounts" value="0" step="0.01" oninput="recalculate()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="other" class="block text-sm font-medium text-gray-700">Other ($)</label>
+              <input type="number" id="other" value="0" step="0.01" oninput="recalculate()" class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <!-- Live Preview (desktop) -->
+      <div class="hidden lg:block">
+        <div class="sticky top-8">
+          <p class="mb-3 text-xs font-medium uppercase tracking-wide text-gray-400">Live Preview</p>
+          <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm" style="transform-origin: top left; transform: scale(0.72); width: 138.9%;">
+            <div id="previewContainer">
+              <!-- Preview rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print Output (hidden until print) -->
+  <div class="print-only" id="printOutput">
+    <!-- Cloned from preview on print -->
+  </div>
+
+  <script>
+    // State
+    let lineItems = [];
+
+    function val(id) { return document.getElementById(id).value; }
+    function numVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function formatShortDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' });
+    }
+
+    function formatMoney(n) {
+      return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function getInvoiceRef() {
+      const num = val('invoiceNumber').replace('#', '').padStart(2, '0');
+      const d = val('issueDate');
+      if (!d) return 'INV-' + num;
+      const parts = d.split('-');
+      return 'INV-' + num + '-' + parts[1] + parts[2] + parts[0];
+    }
+
+    function addLineItem() {
+      const defaultRate = numVal('hourlyRate');
+      lineItems.push({ date: '', summary: '', hours: 0, rate: defaultRate });
+      renderLineItems();
+      recalculate();
+    }
+
+    function removeLineItem(index) {
+      lineItems.splice(index, 1);
+      renderLineItems();
+      recalculate();
+    }
+
+    function updateLineItem(index, field, value) {
+      lineItems[index][field] = (field === 'hours' || field === 'rate') ? (parseFloat(value) || 0) : value;
+      recalculate();
+    }
+
+    function renderLineItems() {
+      const container = document.getElementById('lineItemsContainer');
+      container.innerHTML = lineItems.map((item, i) => `
+        <div class="flex items-start gap-2">
+          <div class="grid flex-1 gap-2" style="grid-template-columns: 7.5rem 1fr 4rem 4.5rem;">
+            <div>
+              ${i === 0 ? '<label class="block text-xs font-medium text-gray-500 mb-1">Date</label>' : ''}
+              <input type="date" value="${item.date}" oninput="updateLineItem(${i}, 'date', this.value)" class="block w-full rounded-md border border-gray-300 px-2 py-1.5 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              ${i === 0 ? '<label class="block text-xs font-medium text-gray-500 mb-1">Summary</label>' : ''}
+              <input type="text" value="${item.summary}" oninput="updateLineItem(${i}, 'summary', this.value)" class="block w-full rounded-md border border-gray-300 px-2 py-1.5 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none" placeholder="Description of work">
+            </div>
+            <div>
+              ${i === 0 ? '<label class="block text-xs font-medium text-gray-500 mb-1">Hours</label>' : ''}
+              <input type="number" value="${item.hours}" step="0.25" oninput="updateLineItem(${i}, 'hours', this.value)" class="block w-full rounded-md border border-gray-300 px-2 py-1.5 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+            <div>
+              ${i === 0 ? '<label class="block text-xs font-medium text-gray-500 mb-1">$/hr</label>' : ''}
+              <input type="number" value="${item.rate}" step="1" oninput="updateLineItem(${i}, 'rate', this.value)" class="block w-full rounded-md border border-gray-300 px-2 py-1.5 text-sm shadow-sm focus:border-red-500 focus:ring-red-500 focus:outline-none">
+            </div>
+          </div>
+          <button type="button" onclick="removeLineItem(${i})" class="${i === 0 ? 'mt-6' : ''} shrink-0 rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-red-500" title="Remove">
+            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function clearLineItems() {
+      if (!confirm('Remove all line items?')) return;
+      lineItems = [];
+      renderLineItems();
+      recalculate();
+    }
+
+    function togglePaste() {
+      const area = document.getElementById('pasteArea');
+      area.classList.toggle('hidden');
+      if (!area.classList.contains('hidden')) {
+        document.getElementById('pasteInput').value = '';
+        document.getElementById('pasteInput').focus();
+      }
+    }
+
+    function parseDate(str) {
+      if (!str) return '';
+      // Try ISO format first (2025-12-03)
+      if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return str;
+      // Try M/D/YYYY or MM/DD/YYYY
+      const slashMatch = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+      if (slashMatch) {
+        return slashMatch[3] + '-' + slashMatch[1].padStart(2, '0') + '-' + slashMatch[2].padStart(2, '0');
+      }
+      // Try named months: "Dec 3, 2025" or "December 3, 2025"
+      const d = new Date(str);
+      if (!isNaN(d.getTime())) {
+        return d.toISOString().split('T')[0];
+      }
+      return '';
+    }
+
+    function isStrictNumber(str) {
+      // Only match values that are purely numeric (with optional $ prefix and commas)
+      // Rejects dates like "1/9/2026" which parseFloat would partially parse
+      if (!str) return false;
+      return /^\$?[\d,]+\.?\d*$/.test(str);
+    }
+
+    function cleanNumber(str) {
+      return parseFloat(str.replace(/[$,]/g, ''));
+    }
+
+    function importPaste() {
+      const raw = document.getElementById('pasteInput').value.trim();
+      if (!raw) return;
+      const defaultRate = numVal('hourlyRate');
+      const rows = raw.split('\n').filter(r => r.trim());
+      const parsed = [];
+
+      for (const row of rows) {
+        const cols = row.split('\t').map(c => c.trim());
+
+        let date = '', summary = '', hours = 0, rate = defaultRate;
+        const textCols = [];
+        const numCols = [];
+
+        for (const col of cols) {
+          if (col === '') continue;
+
+          // Try date first (takes priority over number detection)
+          if (!date && parseDate(col) && !isStrictNumber(col)) {
+            date = parseDate(col);
+          } else if (isStrictNumber(col)) {
+            numCols.push(cleanNumber(col));
+          } else {
+            textCols.push(col);
+          }
+        }
+
+        if (textCols.length === 0) continue;
+        summary = textCols.join(' - ');
+
+        if (numCols.length >= 2) {
+          hours = numCols[0];
+          rate = numCols[1];
+        } else if (numCols.length === 1) {
+          hours = numCols[0];
+        }
+
+        parsed.push({ date, summary, hours, rate });
+      }
+
+      if (parsed.length === 0) {
+        alert('No valid rows found. Paste tab-separated rows from Airtable.');
+        return;
+      }
+
+      lineItems = lineItems.concat(parsed);
+      renderLineItems();
+      recalculate();
+      togglePaste();
+    }
+
+    function recalculate() {
+      updatePreview();
+    }
+
+    function updatePreview() {
+      const discounts = numVal('discounts');
+      const other = numVal('other');
+      const subtotal = lineItems.reduce((sum, item) => sum + item.hours * item.rate, 0);
+      const total = subtotal - discounts + other;
+      const invoiceRef = getInvoiceRef();
+
+      const clientAddr = val('clientAddress');
+      const payeeAddr = val('payeeAddress');
+
+      const totalHours = lineItems.reduce((sum, item) => sum + item.hours, 0);
+
+      const html = `
+        <!-- Page 1 -->
+        <div class="invoice-page" style="min-height: 1056px; font-family: 'InterVariable', 'Inter', system-ui, sans-serif; padding: 3rem; color: #1f2937; display: flex; flex-direction: column;">
+          <div>
+            <!-- Date -->
+            <p style="font-size: 0.8125rem; color: #6b7280; letter-spacing: 0.025em;">${formatDate(val('issueDate'))}</p>
+
+            <!-- Header bar -->
+            <div class="invoice-header-bar" style="margin-top: 2rem; border-radius: 0.5rem; border-top: 3px solid #ef4444; background: #f9fafb; padding: 1.5rem 2rem;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+                <div>
+                  <h3 style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #ef4444; margin: 0 0 0.75rem 0;">Client</h3>
+                  <div style="font-size: 0.8125rem; color: #374151; line-height: 1.65;">
+                    <p style="font-weight: 600; margin: 0;">${val('clientCompany')}</p>
+                    <p style="margin: 0;">ATTN: ${val('clientAttn')}</p>
+                    <p style="margin: 0; white-space: pre-line;">${clientAddr}</p>
+                    <p style="margin: 0; color: #6b7280;">${val('clientWebsite')}</p>
+                  </div>
+                </div>
+                <div>
+                  <h3 style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #ef4444; margin: 0 0 0.75rem 0;">Payable To</h3>
+                  <div style="font-size: 0.8125rem; color: #374151; line-height: 1.65;">
+                    <p style="font-weight: 600; margin: 0;">${val('payeeName')}</p>
+                    <p style="margin: 0; white-space: pre-line;">${payeeAddr}</p>
+                    <p style="margin: 0;">${val('payeePhone')}</p>
+                    <p style="margin: 0; color: #6b7280;">${val('payeeWebsite')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Invoice Summary -->
+            <div style="margin-top: 2.5rem;">
+              <h2 style="font-size: 1rem; font-weight: 700; color: #111827; margin: 0 0 1rem 0;">Invoice Summary</h2>
+              <table style="width: 100%; font-size: 0.8125rem; border-collapse: collapse;">
+                <tbody>
+                  <tr style="border-bottom: 1px solid #e5e7eb;">
+                    <td style="padding: 0.625rem 0; font-weight: 500; color: #6b7280; width: 10rem;">Invoice #</td>
+                    <td style="padding: 0.625rem 0; color: #111827; font-weight: 500;">${val('invoiceNumber')}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #e5e7eb;">
+                    <td style="padding: 0.625rem 0; font-weight: 500; color: #6b7280;">Issue Date</td>
+                    <td style="padding: 0.625rem 0; color: #111827;">${formatDate(val('issueDate'))}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #e5e7eb;">
+                    <td style="padding: 0.625rem 0; font-weight: 500; color: #6b7280;">Payment Due Date</td>
+                    <td style="padding: 0.625rem 0; color: #111827;">${formatDate(val('dueDate'))}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.625rem 0; font-weight: 500; color: #6b7280;">Balance Due</td>
+                    <td style="padding: 0.625rem 0; font-weight: 700; color: #ef4444; font-size: 0.9375rem;">${formatMoney(total)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Payment Terms -->
+            <div style="margin-top: 2.5rem;">
+              <h2 style="font-size: 1rem; font-weight: 700; color: #111827; margin: 0 0 0.75rem 0;">Payment Terms</h2>
+              <p style="font-size: 0.8125rem; line-height: 1.7; color: #4b5563; margin: 0;">${val('paymentTerms')}</p>
+            </div>
+
+            <!-- Payment Methods -->
+            <div style="margin-top: 2rem;">
+              <h2 style="font-size: 1rem; font-weight: 700; color: #111827; margin: 0 0 0.75rem 0;">Payment Methods</h2>
+              <p style="font-size: 0.8125rem; line-height: 1.7; color: #4b5563; margin: 0;">${val('paymentMethods')}</p>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <p class="invoice-footer" style="font-size: 0.6875rem; color: #9ca3af; letter-spacing: 0.05em; margin: auto 0 0 0;">${invoiceRef}</p>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="invoice-page page-break" style="min-height: 1056px; font-family: 'InterVariable', 'Inter', system-ui, sans-serif; padding: 3rem; color: #1f2937; display: flex; flex-direction: column;">
+          <div>
+          <p style="font-size: 0.8125rem; color: #6b7280; letter-spacing: 0.025em;">${formatDate(val('issueDate'))}</p>
+
+          <div style="margin-top: 2rem;">
+            <h2 style="font-size: 1rem; font-weight: 700; color: #111827; margin: 0 0 1rem 0;">Invoice Detail</h2>
+            <table style="width: 100%; font-size: 0.8125rem; border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 2px solid #d1d5db;">
+                  <th style="padding: 0.5rem 0.75rem 0.5rem 0; text-align: left; font-weight: 600; color: #6b7280; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em;">Date</th>
+                  <th style="padding: 0.5rem 0.75rem 0.5rem 0; text-align: left; font-weight: 600; color: #6b7280; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em;">Summary</th>
+                  <th style="padding: 0.5rem 0.75rem 0.5rem 0; text-align: right; font-weight: 600; color: #6b7280; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em;">Hours</th>
+                  <th style="padding: 0.5rem 0; text-align: right; font-weight: 600; color: #6b7280; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em;">Charge</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${lineItems.map((item, idx) => `
+                  <tr style="border-bottom: 1px solid #f3f4f6;${idx % 2 === 1 ? ' background: #fafafa;' : ''}">
+                    <td style="padding: 0.5rem 0.75rem 0.5rem 0; color: #374151; white-space: nowrap;">${formatShortDate(item.date)}</td>
+                    <td style="padding: 0.5rem 0.75rem 0.5rem 0; color: #374151;">${item.summary}</td>
+                    <td style="padding: 0.5rem 0.75rem 0.5rem 0; text-align: right; color: #374151; font-variant-numeric: tabular-nums;">${item.hours.toFixed(2)}</td>
+                    <td style="padding: 0.5rem 0; text-align: right; color: #374151; font-variant-numeric: tabular-nums;">${formatMoney(item.hours * item.rate)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+              <tfoot>
+                <tr style="border-top: 2px solid #d1d5db;">
+                  <td colspan="2" style="padding: 1rem 0.75rem 0.25rem 0; text-align: right; font-weight: 500; color: #6b7280;">Subtotal</td>
+                  <td style="padding: 1rem 0.75rem 0.25rem 0; text-align: right; color: #374151; font-variant-numeric: tabular-nums;">${totalHours.toFixed(2)}</td>
+                  <td style="padding: 1rem 0 0.25rem 0; text-align: right; color: #111827; font-weight: 500; font-variant-numeric: tabular-nums;">${formatMoney(subtotal)}</td>
+                </tr>
+                ${discounts > 0 ? `
+                <tr>
+                  <td colspan="3" style="padding: 0.25rem 0.75rem 0.25rem 0; text-align: right; font-weight: 500; color: #6b7280;">Discounts</td>
+                  <td style="padding: 0.25rem 0; text-align: right; color: #111827; font-variant-numeric: tabular-nums;">-${formatMoney(discounts)}</td>
+                </tr>` : ''}
+                ${other > 0 ? `
+                <tr>
+                  <td colspan="3" style="padding: 0.25rem 0.75rem 0.25rem 0; text-align: right; font-weight: 500; color: #6b7280;">Other</td>
+                  <td style="padding: 0.25rem 0; text-align: right; color: #111827; font-variant-numeric: tabular-nums;">${formatMoney(other)}</td>
+                </tr>` : ''}
+                <tr>
+                  <td colspan="3" style="padding: 0.75rem 0.75rem 0 0; text-align: right; font-weight: 700; color: #111827; font-size: 0.875rem; border-top: 1px solid #e5e7eb;">Total Balance Due</td>
+                  <td style="padding: 0.75rem 0 0 0; text-align: right; font-weight: 700; color: #ef4444; font-size: 0.875rem; font-variant-numeric: tabular-nums; border-top: 1px solid #e5e7eb;">${formatMoney(total)}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          </div>
+
+          <!-- Footer -->
+          <p class="invoice-footer" style="font-size: 0.6875rem; color: #9ca3af; letter-spacing: 0.05em; margin: auto 0 0 0;">${invoiceRef}</p>
+        </div>
+      `;
+
+      document.getElementById('previewContainer').innerHTML = html;
+      document.getElementById('printOutput').innerHTML = html;
+
+      // Update page title for PDF filename: "Invoice #08 - Center Stage Floors"
+      const invNum = val('invoiceNumber').replace('#', '').trim();
+      const company = val('clientCompany').trim();
+      document.title = company ? 'Invoice #' + invNum + ' - ' + company : 'Invoice #' + invNum;
+    }
+
+    // Set default dates
+    (function init() {
+      const today = new Date();
+      const due = new Date(today);
+      due.setDate(due.getDate() + 7);
+      document.getElementById('issueDate').value = today.toISOString().split('T')[0];
+      document.getElementById('dueDate').value = due.toISOString().split('T')[0];
+      renderLineItems();
+      updatePreview();
+    })();
+  </script>
+
+</body>
+</html>
