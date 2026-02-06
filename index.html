@@ -417,6 +417,20 @@
             <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></span>
           </div>
         </button>
+
+        <button type="button" command="show-modal" commandfor="case-study-zapier-make" class="relative flex flex-col rounded-2xl bg-gray-50 p-6 text-left group cursor-pointer transition-all duration-300 hover:bg-gray-100 hover:shadow-md">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-100">
+            <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c36fba0-fc2a-410b-a9d7-cc5bc7bbead1_1536x1024.png" alt="Zapier vs Make cost comparison" class="size-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="mt-4 flex-1">
+            <span class="text-xs font-semibold text-red-500">Tool Development</span>
+            <h3 class="mt-2 text-lg font-semibold text-gray-900">Zapier vs Make Cost Comparison Tool</h3>
+            <p class="mt-2 text-sm text-gray-600">Built a cost-comparison tool to help businesses understand the true cost differences between automation platforms.</p>
+          </div>
+          <div class="mt-4">
+            <span class="text-sm font-semibold text-red-500 group-hover:text-red-400">Read more <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -610,6 +624,63 @@
                   <li><strong>Centralized visibility</strong> into all return opportunities</li>
                   <li><strong>Streamlined returns</strong> with guided workflows</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </el-dialog-panel>
+      </div>
+    </dialog>
+  </el-dialog>
+
+  <!-- Zapier vs Make Case Study -->
+  <el-dialog>
+    <dialog id="case-study-zapier-make" class="backdrop:bg-gray-900/80">
+      <div tabindex="0" class="fixed inset-0 focus:outline-none">
+        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-lg sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-semibold text-red-500">Tool Development</span>
+            <button type="button" command="close" commandfor="case-study-zapier-make" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6">
+            <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c36fba0-fc2a-410b-a9d7-cc5bc7bbead1_1536x1024.png" alt="Zapier vs Make cost comparison case study" class="w-full rounded-xl object-cover aspect-video" loading="lazy" />
+            <h2 class="mt-6 text-2xl font-semibold text-gray-900">Zapier vs Make Cost Comparison Tool</h2>
+            <div class="mt-6 space-y-6 text-sm text-gray-600">
+              <div>
+                <h3 class="font-semibold text-gray-900">The Challenge</h3>
+                <p class="mt-2">A client asked what seemed like a simple question: which automation platform is cheaper, Zapier or Make? The answer proved surprisingly complex because both platforms use fundamentally different billing models that make direct comparison deceptive.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Solution</h3>
+                <p class="mt-2">We developed a cost-comparison tool that standardizes measurements across both platforms:</p>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li>Accepts current Zapier usage data (active workflows, monthly tasks)</li>
+                  <li>Calculates equivalent Make operation costs</li>
+                  <li>Accounts for billing model differences (Zapier tasks vs Make operations)</li>
+                  <li>Reveals hidden cost factors like trigger counting and branching logic</li>
+                  <li>Enables genuine apples-to-apples price comparisons</li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">The Impact</h3>
+                <ul class="mt-2 space-y-2">
+                  <li><strong>Clear cost visibility</strong> across both platforms</li>
+                  <li><strong>Data-driven platform decisions</strong> instead of guesswork</li>
+                  <li><strong>Understanding of pricing mechanics</strong> that affect total cost</li>
+                  <li><strong>Strategic platform selection</strong> based on actual workflow patterns</li>
+                </ul>
+              </div>
+              <div class="pt-4">
+                <a href="https://prepwork.fillout.com/t/cCt3xvAeAmus" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md bg-red-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-400 transition-colors">
+                  Try the tool
+                  <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
